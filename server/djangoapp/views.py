@@ -25,8 +25,8 @@ def get_cars(request):
     cars = []
     for car_model in car_models:
         cars.append(
-            {"CarModel": car_model.name, 
-            "CarMake": car_model.car_make.name
+            {"CarModel": car_model.name,
+             "CarMake": car_model.car_make.name
             }
         )
     return JsonResponse({"CarModels": cars})
@@ -90,7 +90,7 @@ def registration(request):
         return JsonResponse(data)
 
 
-# Update the `get_dealerships` view to render the 
+# Update the `get_dealerships` view to render the
 # index page with a list of dealerships
 def get_dealerships(request, state="All"):
     if state == "All":
@@ -136,8 +136,8 @@ def add_review(request):
         except Exception as err:
             print(f"Unexpected {err=}, {type(err)=}")
             return JsonResponse(
-                {"status": 401, 
-                "message": "Error in posting review"
+                {"status": 401,
+                 "message": "Error in posting review"
                 }
             )
     else:
